@@ -1,37 +1,39 @@
 import java.util.Scanner;
 
-class RiverData
+class DataHandling
 {
     public static void main(String[] args)
     {
+        // input using scanner class
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter array size: ");
-        int size = sc.nextInt();
-        int[] river = new int[size];
-        
-        int min = Integer.MAX_VALUE;
-        int max = Integer.MIN_VALUE;
-        long sum = 0;
-
+        int size = sc.nextInt();    // size of input
         System.out.print("Enter data: ");
+        
+        int[] data = new int[size];     // to store data
+        int min = Integer.MAX_VALUE;    // to store min value
+        int max = Integer.MIN_VALUE;    // to store max value
+        long sum = 0;                   // to store sum
+
+        // logic to calculate min, max, and sum
         for (int index = 0; index < size; index++)
         {
-            river[index] = sc.nextInt();
+            data[index] = sc.nextInt();
 
-            if (river[index] < min)
-                min = river[index];
+            if (data[index] < min)
+                min = data[index];
             
-            if (river[index] > max)
-                max = river[index];
+            if (data[index] > max)
+                max = data[index];
 
-            sum += river[index];
+            sum += data[index];
         }
         System.out.println();
 
+        // printing output
         System.out.println("Minimum: " + min);
         System.out.println("Maximum: " + max);
         System.out.println("Sum of data: " + sum);
-
-        sc.close();
+        sc.close(); // to avoid data leak
     }
 }

@@ -2,10 +2,11 @@ import java.util.Scanner;;
 
 class ElectricBill
 {
-    String n;
-    int units;
-    double bill;
+    String n;       // to store name
+    int units;      // to store units cosumed
+    double bill;    // to store bill calculated 
 
+    // method to accept input using Scanner
     void accept()
     {
         Scanner sc = new Scanner(System.in);
@@ -16,6 +17,7 @@ class ElectricBill
         sc.close();
     }
 
+    // method to calculate bill
     void calculate()
     {
         if (units <= 100)
@@ -31,6 +33,7 @@ class ElectricBill
         }
     }
 
+    // method to print output
     void print()
     {
         System.out.println("Name of the customer " + n);
@@ -38,6 +41,7 @@ class ElectricBill
         System.out.println("Bill amount " + bill);
     }
 
+    // Main Method to test class
     public static void main(String[] args)
     {
         ElectricBill bill = new ElectricBill();

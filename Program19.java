@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class LeapYears
 {
-
+    // Method to check leap year
     static boolean IsLeapYear(int year)
     {
         boolean div4 = year % 4 == 0;
@@ -18,33 +18,36 @@ class LeapYears
 
     public static void main(String[] args)
     {
+        // input using Scanner
         Scanner sc = new Scanner(System.in);
-        int[] years = new int[10];
-        boolean[] leapYear = new boolean[10];
+        int[] years = new int[10];  // array to input 10 years
+        boolean[] leapYear = new boolean[10];   // to store if leap year
+        int leapYearCount = 0;  // to store no. of leap years
         
+        // inputing years into array
         System.out.println("Enter years: ");
         for (int i=0; i < 10; i++)
         {
             years[i] = sc.nextInt();
             leapYear[i] = IsLeapYear(years[i]);
+            if (leapYear[i]) leapYearCount++;
         }
 
+        //  Printing all years
         System.out.print("All years: ");
         for (int i=0; i < 10; i++)
             System.out.print(years[i] + " ");
         System.out.println();
 
-        int leapYearCount = 0;
+        // printing leap years
         System.out.print("Leap years: ");
         for (int i=0; i < 10; i++)
-            if (leapYear[i]) 
-            {
+            if (leapYear[i])
                 System.out.print(years[i] + " ");
-                leapYearCount++;
-            }
         System.out.println();
 
+        //  printing no. of leap years
         System.out.println("No. of leap years: " + leapYearCount);
-        sc.close();
+        sc.close(); // to avoid data leak
     }
 }

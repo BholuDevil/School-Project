@@ -4,11 +4,14 @@ class Capitalize
 {
     public static void main(String[] args)
     {
+        // taking input using Scanner class
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter string in lowercase :-");
         String input = sc.nextLine();
+        sc.close(); // to avoid data leak
 
-        String str = "";
+        // logic to capitalize every word's first letter
+        String str = "";    // to hold new string
         boolean IsNewWord = true;
         for (int index = 0; index < input.length(); index++)
         {
@@ -23,8 +26,8 @@ class Capitalize
                 IsNewWord = false;
         }
 
+        // printing output
         System.out.println("New Capitalized String :-");
         System.out.println(str);
-        sc.close();
     }
 }

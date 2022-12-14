@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class SpecialPalindrome
 {
-
+    // Method to check palindrome no.
     static boolean IsPalindrome(String word)
     {
         boolean isPalindrome = true;
@@ -18,6 +18,7 @@ class SpecialPalindrome
             }
         return isPalindrome;
     }
+    // Method to check special no.
     static boolean IsSpecial(String word)
     {
         word = word.toLowerCase();
@@ -26,19 +27,22 @@ class SpecialPalindrome
 
     public static void main(String[] args)
     {
+        // input using Scanner
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter word: ");
         String word = sc.next();
 
+        // calling methods
         boolean isPalindrome = IsPalindrome(word);
         boolean isSpecial = IsSpecial(word);
         
+        // Printing output
         if (isPalindrome)
             System.out.println(word + " is palindrome.");
         else if (isSpecial)
             System.out.println(word + " is special.");
         else
             System.out.println(word + " is neither palindrome nor special.");
-        sc.close();
+        sc.close(); // to avoid data leak
     }
 }
