@@ -13,10 +13,12 @@ class NumberSystem
         // converting into binary and octal using library classes
         String binary = Long.toBinaryString(number);
         String octal = Long.toOctalString(number);
+        String hexadecimal = Long.toHexString(number); 
 
         // printing output
         System.out.println("Decimal Value: " + number);
         System.out.println("Binary Value: " + binary);
         System.out.println("Octal Value: " + octal);
+        System.out.println("Hexa Decimal Value: " + hexadecimal);
     }
 }
